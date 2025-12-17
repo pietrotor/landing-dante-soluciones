@@ -1,19 +1,1140 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import ServiceCard from "../components/ServiceCard";
+import ProductCard from "../components/ProductCard";
+import AnimatedCounter from "../components/AnimatedCounter";
+import SectionAnimation from "../components/SectionAnimation";
+import AnimatedTitle from "../components/AnimatedTitle";
+import AnimatedIcon from "../components/AnimatedIcon";
+import CourseModal from "../components/CourseModal";
 ---
 
-<Layout title="Dante Soluciones - Landing">
-  <main class="min-h-screen">
-    <section class="container mx-auto px-4 py-16">
-      <div class="text-center animate-fade-in">
-        <h1 class="text-5xl font-bold mb-4 animate-slide-down">
-          Bienvenido a Dante Soluciones
-        </h1>
-        <p class="text-xl text-gray-600 animate-slide-up">
-          Tu landing page está lista para comenzar
-        </p>
+<Layout title="Dante Soluciones - Servicios Financieros">
+  <Navigation client:load />
+  <CourseModal client:load />
+
+  <!-- Hero Section - Completamente Rediseñado -->
+  <section
+    id="hero"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden"
+  >
+    <!-- Animated Gradient Background -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#312e81] via-[581c87] to-[831843] animate-gradient bg-[length:400%_400%]"
+    >
+    </div>
+
+    <!-- Animated Mesh Gradient Overlay -->
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-[#2563eb] rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow"
+      >
       </div>
-    </section>
-  </main>
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-[#06b6d4] rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow animation-delay-200"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 left-1/2 w-96 h-96 bg-[#10b981] rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow animation-delay-400"
+      >
+      </div>
+    </div>
+
+    <!-- Grid Pattern Overlay -->
+    <div
+      class="absolute inset-0 opacity-20"
+      style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"
+    >
+    </div>
+
+    <div
+      class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 sm:pt-32 pb-12 sm:pb-20"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Badge -->
+        <div class="flex justify-center lg:justify-start mb-4 sm:mb-6">
+          <div
+            class="px-4 sm:px-6 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/90 text-xs sm:text-sm font-medium animate-fade-in-down"
+          >
+            ✨ Asesoría Financiera Premium
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center"
+        >
+          <!-- Text Content -->
+          <div class="text-center lg:text-left space-y-6 sm:space-y-8">
+            <div class="space-y-3 sm:space-y-4 animate-fade-in-up">
+              <p
+                class="text-lg sm:text-xl md:text-2xl text-white/80 font-light tracking-wide"
+              >
+                ¡Hola! Soy
+              </p>
+              <h1
+                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight"
+              >
+                <span class="block text-white">Dante Orlando</span>
+                <span
+                  class="block bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]"
+                >
+                  Cuéllar Patiño
+                </span>
+              </h1>
+            </div>
+
+            <p
+              class="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light animate-fade-in-up animation-delay-200 px-2 sm:px-0"
+            >
+              Ingeniero químico con maestría en Administración de Negocios,
+              especializado en <span class="text-white font-semibold"
+                >finanzas y valoración de empresas</span
+              >. Transformo desafíos en oportunidades con un enfoque
+              estratégico, analítico y orientado a resultados.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-400 px-2 sm:px-0"
+            >
+              <a
+                href="#services"
+                class="group relative px-6 sm:px-8 py-4 sm:py-5 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-neon-lg overflow-hidden"
+              >
+                <span
+                  class="relative z-10 flex items-center justify-center gap-2"
+                >
+                  Conoce mis servicios
+                  <svg
+                    class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#2563eb] to-[#10b981] opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                </div>
+              </a>
+              <a
+                href="#about"
+                class="px-6 sm:px-8 py-4 sm:py-5 bg-white/10 backdrop-blur-xl border-2 border-white/30 text-white rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/50"
+              >
+                Más sobre mí
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="grid grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8 animate-fade-in-up animation-delay-600"
+            >
+              <div class="text-center lg:text-left">
+                <div class="text-2xl sm:text-3xl font-black text-white mb-1">
+                  <AnimatedCounter
+                    client:load
+                    value={100}
+                    prefix="+"
+                    duration={2000}
+                    className="text-2xl sm:text-3xl font-black text-white"
+                  />
+                </div>
+                <div class="text-xs sm:text-sm text-white/60">Clientes</div>
+              </div>
+              <div class="text-center lg:text-left">
+                <div class="text-2xl sm:text-3xl font-black text-white mb-1">
+                  <AnimatedCounter
+                    client:load
+                    value={10}
+                    suffix="+"
+                    duration={2000}
+                    className="text-2xl sm:text-3xl font-black text-white"
+                  />
+                </div>
+                <div class="text-xs sm:text-sm text-white/60">Años Exp.</div>
+              </div>
+              <div class="text-center lg:text-left">
+                <div class="text-2xl sm:text-3xl font-black text-white mb-1">
+                  <AnimatedCounter
+                    client:load
+                    value={100}
+                    suffix="%"
+                    duration={2000}
+                    className="text-2xl sm:text-3xl font-black text-white"
+                  />
+                </div>
+                <div class="text-xs sm:text-sm text-white/60">Resultados</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image with Glassmorphism Frame -->
+          <div
+            class="relative animate-fade-in-up animation-delay-200 mt-8 lg:mt-0"
+          >
+            <div class="relative">
+              <!-- Glow Effect -->
+              <div
+                class="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] rounded-3xl blur-2xl opacity-50 animate-pulse-slow"
+              >
+              </div>
+
+              <!-- Glassmorphism Container -->
+              <div
+                class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-2 shadow-2xl"
+              >
+                <div class="relative overflow-hidden rounded-2xl">
+                  <img
+                    src="https://www.dantesoluciones.com/dante-profile.jpg"
+                    alt="Dante Orlando Cuéllar Patiño"
+                    class="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover rounded-2xl"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+                  >
+                  </div>
+
+                  <!-- Floating Badge -->
+                  <div
+                    class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6"
+                  >
+                    <div
+                      class="bg-white/20 backdrop-blur-xl border border-white/30 rounded-xl p-3 sm:p-4"
+                    >
+                      <p class="text-white font-semibold text-xs sm:text-sm">
+                        💼 Especialista en Finanzas
+                      </p>
+                      <p class="text-white/80 text-xs mt-1">
+                        Transformando ideas en resultados
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Decorative Elements -->
+              <div
+                class="absolute -top-4 sm:-top-8 -right-4 sm:-right-8 w-24 h-24 sm:w-32 sm:h-32 bg-[#06b6d4]/30 rounded-full blur-3xl animate-float"
+              >
+              </div>
+              <div
+                class="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 w-32 h-32 sm:w-40 sm:h-40 bg-[#2563eb]/30 rounded-full blur-3xl animate-float animation-delay-200"
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div
+      class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce"
+    >
+      <div
+        class="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2"
+      >
+        <div class="w-1.5 h-1.5 bg-white/70 rounded-full animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section - Diseño Asimétrico Moderno -->
+  <section id="services" class="relative py-20 sm:py-32 overflow-hidden">
+    <!-- Background with Gradient -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#111118] to-[#0a0a0f]"
+    >
+    </div>
+
+    <!-- Animated Orbs -->
+    <div
+      class="absolute top-20 left-10 w-72 h-72 bg-[#4f46e5]/20 rounded-full blur-3xl animate-pulse-slow animate-float"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-10 w-96 h-96 bg-[#2563eb]/20 rounded-full blur-3xl animate-pulse-slow animation-delay-400 animate-float animation-delay-200"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Section Header -->
+      <SectionAnimation client:load delay={0.1}>
+        <div class="text-center mb-12 sm:mb-20">
+          <AnimatedTitle client:load delay={0.1}>
+            <div
+              class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            >
+              💼 Servicios
+            </div>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.2}>
+            <h2
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 px-2 sm:px-0"
+            >
+              <span
+                class="bg-gradient-to-r from-white via-[#06b6d4] to-[#2563eb] bg-clip-text text-transparent"
+              >
+                Soluciones
+              </span>
+              <span class="text-white block">Financieras</span>
+            </h2>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.3}>
+            <p
+              class="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto px-4 sm:px-0"
+            >
+              Servicios diseñados para transformar tu futuro financiero
+            </p>
+          </AnimatedTitle>
+        </div>
+      </SectionAnimation>
+
+      <!-- Services Grid - Asimétrico -->
+      <div class="max-w-7xl mx-auto space-y-6 sm:space-y-8">
+        <!-- Asesoría Personalizada - Full Width Card -->
+        <ServiceCard
+          client:load
+          title="Asesoría Personalizada"
+          description="Te ayudaré a dejar de perder dinero ahorrando. Estrategias personalizadas para maximizar tus inversiones y alcanzar tus objetivos financieros."
+          gradient="bg-gradient-to-br from-[#10b981] via-[#4f46e5] to-[#06b6d4]"
+          image="https://www.dantesoluciones.com/asesoria.png"
+          links={[
+            {
+              text: "Sesión 20 min. (49 USD)",
+              href: "https://calendly.com/dantesoluciones/asesoria-personalizada-20-min",
+            },
+            {
+              text: "Sesión 45 min. (99 USD)",
+              href: "https://calendly.com/dantesoluciones/asesoria-personalizada-45-min",
+            },
+          ]}
+          delay={0.1}
+        />
+
+        <!-- Referidos - Grid de 2 columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <ServiceCard
+            client:load
+            title="Referidos Exclusivos"
+            description="Descuentos exclusivos y premios de nuestros aliados estratégicos. Usa nuestros links para registrarte y obtener beneficios únicos."
+            gradient="bg-gradient-to-br from-[#2563eb] via-[#4f46e5] to-[#10b981]"
+            image="https://www.dantesoluciones.com/plataforma.png"
+            links={[
+              {
+                text: "Airtm",
+                href: "https://app.airtm.io/ivt/dantecuebtmrmhwu",
+              },
+              {
+                text: "PEYO",
+                href: "https://www.ideasdeinternet.com/registrate-dantesoluciones",
+              },
+              { text: "BYBIT", href: "https://partner.bybit.com/b/dantep2pq3" },
+            ]}
+            delay={0.2}
+          />
+          <ServiceCard
+            client:load
+            title="Más Plataformas"
+            description="Accede a más oportunidades de inversión y servicios financieros premium."
+            gradient="bg-gradient-to-br from-[#f97316] via-[#f59e0b] to-[#10b981]"
+            image="https://www.dantesoluciones.com/plataforma.png"
+            links={[
+              {
+                text: "El Dorado",
+                href: "https://link.eldorado.io/zgUATeIZWVb",
+              },
+              {
+                text: "Admirals",
+                href: "https://admiralmarkets.onelink.me/7Buw/q7zfjh0y",
+              },
+              { text: "Luca Money", href: "https://taplink.cc/lucamoney" },
+            ]}
+            delay={0.3}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section - Layout Creativo con Efectos 3D -->
+  <section id="products" class="relative py-20 sm:py-32 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[#111118] via-[#0a0a0f] to-[#111118]"
+    >
+    </div>
+
+    <!-- Mesh Gradient Background -->
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-0 left-1/4 w-96 h-96 bg-[#06b6d4]/30 rounded-full blur-3xl animate-float"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#2563eb]/30 rounded-full blur-3xl animate-float animation-delay-400"
+      >
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <SectionAnimation client:load delay={0.1}>
+        <div class="text-center mb-12 sm:mb-20">
+          <AnimatedTitle client:load delay={0.1}>
+            <div
+              class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            >
+              🚀 Productos
+            </div>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.2}>
+            <h2
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 px-2 sm:px-0"
+            >
+              <span class="text-white">Oportunidades de</span>
+              <span
+                class="block bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] bg-clip-text text-transparent"
+              >
+                Inversión
+              </span>
+            </h2>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.3}>
+            <p
+              class="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto px-4 sm:px-0"
+            >
+              Diversifica tu portafolio con nuestras opciones de inversión
+              estratégicas
+            </p>
+          </AnimatedTitle>
+        </div>
+      </SectionAnimation>
+
+      <!-- Products Grid - Layout Asimétrico -->
+      <div class="max-w-7xl mx-auto">
+        <!-- Primera Fila - 2 productos grandes -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8"
+        >
+          <ProductCard
+            client:load
+            title="Inversión de Departamentos"
+            image="https://www.dantesoluciones.com/torre-xavi-equipetrol.jpg"
+            description="Si estás buscando en invertir en un departamento que se pague solo o que te genere rendimientos en dólares, nuestros proyectos exclusivamente diseñados para la renta corta en plataformas como Airbnb y ubicados en las mejores zonas para la renta corta, este modelo de negocio es para vos."
+            link="https://wa.me/59175640699?text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20inversi%C3%B3n%20en%20departamentos"
+            delay={0.1}
+          />
+          <ProductCard
+            client:load
+            title="Terreno en Aportación"
+            image="https://www.dantesoluciones.com/terreno-aportacion.png"
+            description="Si tienes un terreno ubicado en una zona con alto potencial de desarrollo y quieres sacarle el máximo provecho posible pero no tienes el dinero para ejecutar un desarrollo inmobiliario, nuestro servicio de Terreno en aportación es para vos."
+            link="https://wa.me/59175640699?text=hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20de%20su%20servicio%20terreno%20en%20aportaci%C3%B3n."
+            delay={0.2}
+          />
+        </div>
+
+        <!-- Segunda Fila - 3 productos -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <ProductCard
+            client:load
+            title="Inversión en tierra"
+            image="https://www.dantesoluciones.com/tierra.JPG"
+            description="Si estás buscando la forma de proteger tus ahorros en un producto de bajo riesgo y con un alto potencial de crecimiento, nuestros proyectos de inversión en tierra son para vos."
+            link="https://wa.me/59175640699?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20inversi%C3%B3n%20en%20tierra."
+            delay={0.3}
+          />
+          <ProductCard
+            client:load
+            title="Inversión en acciones"
+            image="https://www.dantesoluciones.com/invertir-acciones.png"
+            description="Si estás buscando invertir bienes raíces y negocios de exportación para generar ingresos en Dólares, pero sin tener que preocuparte por administrar el proyecto y sin tener que invertir sumas astronómicas de capital nuestra inversión en acciones es para vos."
+            link="https://wa.me/59175640699?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20inversi%C3%B3n%20en%20acciones."
+            delay={0.4}
+          />
+          <ProductCard
+            client:load
+            title="Inversión Fraccionada"
+            image="https://www.dantesoluciones.com/inversion-fraccionada.jpeg"
+            description="Si estás buscando empezar a invertir con poco capital esta es tu mejor opción, nuestro modelo de inversión fraccionada te permite invertir en activos previamente estudiados por nosotros desde tan solo 100 USDT en diferentes tipos de proyectos desde proyectos inmobiliarios, de exportación y hasta STARTUPS, con pagos de dividendos anuales y con gran potencial de crecimiento."
+            link="https://wa.me/59175640699?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20inversi%C3%B3n%20fraccionada."
+            delay={0.5}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section - Curso Destacado -->
+  <section id="courses" class="relative py-20 sm:py-32 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[#111118] via-[#0a0a0f] to-[#111118]"
+    >
+    </div>
+
+    <!-- Animated Background -->
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-1/4 right-1/4 w-96 h-96 bg-[#10b981]/30 rounded-full blur-3xl animate-float"
+      >
+      </div>
+      <div
+        class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#06b6d4]/30 rounded-full blur-3xl animate-float animation-delay-400"
+      >
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <SectionAnimation client:load delay={0.1}>
+        <div class="text-center mb-12 sm:mb-20">
+          <AnimatedTitle client:load delay={0.1}>
+            <div
+              class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            >
+              📚 Cursos
+            </div>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.2}>
+            <h2
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 px-2 sm:px-0"
+            >
+              <span class="text-white">Aprende y</span>
+              <span
+                class="block bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] bg-clip-text text-transparent"
+              >
+                Transforma tu Futuro
+              </span>
+            </h2>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.3}>
+            <p
+              class="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto px-4 sm:px-0"
+            >
+              Capacítate con nuestros cursos especializados en finanzas e
+              inversiones
+            </p>
+          </AnimatedTitle>
+        </div>
+      </SectionAnimation>
+
+      <!-- Course Card -->
+      <SectionAnimation client:load delay={0.2}>
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="group relative overflow-hidden backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.01]"
+          >
+            {/* Gradient Overlay */}
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-[#2563eb]/20 via-[#10b981]/20 to-[#06b6d4]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            >
+            </div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row">
+              {/* Image - Left Side on Desktop */}
+              <div
+                class="relative w-full lg:w-1/2 flex-shrink-0 overflow-hidden"
+              >
+                <img
+                  src="https://www.dantesoluciones.com/curso.jpeg"
+                  alt="Curso de Dante Soluciones"
+                  class="w-full h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent lg:bg-gradient-to-b from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                >
+                </div>
+              </div>
+
+              {/* Content - Right Side on Desktop */}
+              <div
+                class="flex-1 flex flex-col justify-center p-6 sm:p-8 md:p-10 lg:p-12"
+              >
+                <div class="mb-6">
+                  {/* Badge - Visible in mobile and desktop */}
+                  <div
+                    class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4"
+                  >
+                    💼 Curso Disponible
+                  </div>
+                  <h3
+                    class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6"
+                  >
+                    ¡Descubre nuestro curso!
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed mb-6 sm:mb-8"
+                  >
+                    Aprende estrategias financieras avanzadas y transforma tu
+                    futuro económico con nuestro curso especializado diseñado
+                    para ayudarte a alcanzar tus objetivos financieros.
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div class="mt-auto">
+                  <a
+                    href="https://wa.me/59175640699?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20curso."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group/btn inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] text-white rounded-2xl font-black text-base sm:text-lg transition-all duration-300 shadow-xl hover:shadow-neon-lg gap-3 hover:scale-105"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                      ></path>
+                    </svg>
+                    <span>Más información</span>
+                    <svg
+                      class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionAnimation>
+    </div>
+  </section>
+
+  <!-- Community Section - Glassmorphism Cards -->
+  <section id="community" class="relative py-20 sm:py-32 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#312e81] via-blue-900 to-emerald-900"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <SectionAnimation client:load delay={0.1}>
+        <div class="text-center mb-12 sm:mb-20">
+          <AnimatedTitle client:load delay={0.1}>
+            <div
+              class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            >
+              👥 Comunidad
+            </div>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.2}>
+            <h2
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 px-2 sm:px-0"
+            >
+              <span
+                class="bg-gradient-to-r from-white via-[#06b6d4] to-[#2563eb] bg-clip-text text-transparent"
+              >
+                Únete a Nuestra
+              </span>
+              <span class="block text-white">Comunidad</span>
+            </h2>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.3}>
+            <p
+              class="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto px-4 sm:px-0"
+            >
+              Conecta con inversores y comparte estrategias
+            </p>
+          </AnimatedTitle>
+        </div>
+      </SectionAnimation>
+
+      <SectionAnimation client:load delay={0.2}>
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+            <!-- WhatsApp Grupo -->
+            <SectionAnimation client:load delay={0.1} direction="left">
+              <div
+                class="group relative overflow-hidden backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-neon-lg"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-[#10b981]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                </div>
+                <div class="relative z-10">
+                  <div class="flex items-center mb-4 sm:mb-6">
+                    <div
+                      class="w-12 h-12 sm:w-16 sm:h-16 bg-[#10b981]/20 rounded-2xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-110 transition-transform"
+                    >
+                      <svg
+                        class="w-6 h-6 sm:w-8 sm:h-8 text-[#10b981]"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">
+                      Grupo de Inversión
+                    </h3>
+                  </div>
+                  <p
+                    class="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 leading-relaxed"
+                  >
+                    Únete a nuestro grupo de inversión para compartir
+                    estrategias y oportunidades.
+                  </p>
+                  <a
+                    href="https://whatsapp.com/channel/0029Vb64rZbDp2Q8xww4HG3Q"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center w-full px-4 sm:px-6 py-3 sm:py-4 bg-[#10b981]/20 hover:bg-[#10b981]/30 text-white rounded-xl transition-all duration-300 font-semibold text-sm sm:text-base border border-[#10b981]/30 hover:border-[#10b981]/50"
+                  >
+                    Unirse al Grupo
+                    <svg
+                      class="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </SectionAnimation>
+
+            <!-- Telegram -->
+            <SectionAnimation client:load delay={0.2} direction="right">
+              <div
+                class="group relative overflow-hidden backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-neon-lg"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-[#06b6d4]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                </div>
+                <div class="relative z-10">
+                  <div class="flex items-center mb-4 sm:mb-6">
+                    <div
+                      class="w-12 h-12 sm:w-16 sm:h-16 bg-[#06b6d4]/20 rounded-2xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-110 transition-transform"
+                    >
+                      <svg
+                        class="w-6 h-6 sm:w-8 sm:h-8 text-[#06b6d4]"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">
+                      Team Silvestre
+                    </h3>
+                  </div>
+                  <p
+                    class="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 leading-relaxed"
+                  >
+                    Únete a nuestro canal de telegram para estar al tanto de
+                    todo lo que hacemos.
+                  </p>
+                  <a
+                    href="https://t.me/joinchat/V8jSGrBvPAXk1uN5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center w-full px-4 sm:px-6 py-3 sm:py-4 bg-[#06b6d4]/20 hover:bg-[#06b6d4]/30 text-white rounded-xl transition-all duration-300 font-semibold text-sm sm:text-base border border-[#06b6d4]/30 hover:border-[#06b6d4]/50"
+                  >
+                    Unirse al Grupo
+                    <svg
+                      class="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </SectionAnimation>
+          </div>
+        </div>
+      </SectionAnimation>
+    </div>
+  </section>
+
+  <!-- About Section - Diseño Moderno -->
+  <section id="about" class="relative py-20 sm:py-32 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#111118] to-[#0a0a0f]"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center"
+        >
+          <!-- Image -->
+          <SectionAnimation client:load delay={0.2} direction="right">
+            <div class="relative order-2 lg:order-1">
+              <div class="relative">
+                <!-- Glow -->
+                <div
+                  class="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-[#2563eb] via-[#f59e0b] to-[#06b6d4] rounded-3xl blur-2xl opacity-50 animate-pulse-slow"
+                >
+                </div>
+
+                <!-- Glassmorphism Frame -->
+                <div
+                  class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-2 shadow-2xl"
+                >
+                  <div class="relative overflow-hidden rounded-2xl">
+                    <img
+                      src="https://www.dantesoluciones.com/dante-profile.jpg"
+                      alt="Dante Orlando Cuéllar Patiño"
+                      class="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover rounded-2xl"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SectionAnimation>
+
+          <!-- Content -->
+          <SectionAnimation client:load delay={0.1} direction="left">
+            <div class="space-y-4 sm:space-y-6 order-1 lg:order-2">
+              <AnimatedTitle client:load delay={0.1}>
+                <div
+                  class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium"
+                >
+                  👤 Sobre Mí
+                </div>
+              </AnimatedTitle>
+              <AnimatedTitle client:load delay={0.2}>
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6"
+                >
+                  Transformando
+                  <span
+                    class="block bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] bg-clip-text text-transparent"
+                  >
+                    Desafíos en Oportunidades
+                  </span>
+                </h2>
+              </AnimatedTitle>
+              <AnimatedTitle client:load delay={0.3}>
+                <div
+                  class="w-20 sm:w-24 h-1 bg-gradient-to-r from-[#06b6d4] to-[#2563eb] mb-6 sm:mb-8"
+                >
+                </div>
+              </AnimatedTitle>
+
+              <AnimatedTitle client:load delay={0.4}>
+                <p
+                  class="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed"
+                >
+                  Soy <span class="text-white font-semibold"
+                    >ingeniero químico</span
+                  > con una maestría en Administración de Negocios, especializado
+                  en finanzas y valoración de empresas.
+                </p>
+              </AnimatedTitle>
+              <AnimatedTitle client:load delay={0.5}>
+                <p
+                  class="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed"
+                >
+                  Mi verdadera pasión es <span class="text-white font-semibold"
+                    >resolver problemas</span
+                  > y convertir desafíos en oportunidades. Mi enfoque es estratégico,
+                  analítico y orientado a resultados, siempre con la convicción de
+                  que puedo hacer posible lo imposible.
+                </p>
+              </AnimatedTitle>
+
+              <AnimatedTitle client:load delay={0.6}>
+                <div class="pt-4 sm:pt-8">
+                  <a
+                    href="#contact"
+                    class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-neon-lg"
+                  >
+                    Conectemos
+                    <svg
+                      class="w-4 h-4 sm:w-5 sm:h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </AnimatedTitle>
+            </div>
+          </SectionAnimation>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Social Media Section - CTA Final Impactante -->
+  <section id="contact" class="relative py-20 sm:py-32 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#312e81] via-blue-900 to-emerald-900"
+    >
+    </div>
+
+    <!-- Animated Background -->
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#06b6d4]/40 rounded-full blur-3xl animate-pulse-slow"
+      >
+      </div>
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2563eb]/40 rounded-full blur-3xl animate-pulse-slow animation-delay-400"
+      >
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <SectionAnimation client:load delay={0.1}>
+          <AnimatedTitle client:load delay={0.1}>
+            <div
+              class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            >
+              📱 Redes Sociales
+            </div>
+          </AnimatedTitle>
+          <AnimatedTitle client:load delay={0.2}>
+            <h2
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 px-2 sm:px-0"
+            >
+              <span
+                class="bg-gradient-to-r from-white via-[#06b6d4] to-[#2563eb] bg-clip-text text-transparent"
+              >
+                Conectemos
+              </span>
+            </h2>
+          </AnimatedTitle>
+        </SectionAnimation>
+
+        <!-- Social Icons Grid -->
+        <SectionAnimation client:load delay={0.3}>
+          <div
+            class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-12 sm:mb-16"
+          >
+            <AnimatedIcon client:load delay={0.1}>
+              <a
+                href="https://www.facebook.com/dante.soluciones?"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative w-16 h-16 sm:w-20 sm:h-20 backdrop-blur-xl bg-white/10 border-2 border-white/20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/20 hover:shadow-neon"
+              >
+                <svg
+                  class="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  ></path>
+                </svg>
+              </a>
+            </AnimatedIcon>
+
+            <AnimatedIcon client:load delay={0.15}>
+              <a
+                href="https://www.instagram.com/orlando.dante?igsh=bmFvMG1nOXNyd2F3&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative w-16 h-16 sm:w-20 sm:h-20 backdrop-blur-xl bg-white/10 border-2 border-white/20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-emerald-500 hover:bg-emerald-500/20 hover:shadow-neon"
+              >
+                <svg
+                  class="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                  ></path>
+                </svg>
+              </a>
+            </AnimatedIcon>
+
+            <AnimatedIcon client:load delay={0.2}>
+              <a
+                href="https://www.tiktok.com/@dante.soluciones396?_t=ZM-8tP8Y1d745d&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative w-16 h-16 sm:w-20 sm:h-20 backdrop-blur-xl bg-white/10 border-2 border-white/20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-black hover:bg-black/20 hover:shadow-neon"
+              >
+                <svg
+                  class="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                  ></path>
+                </svg>
+              </a>
+            </AnimatedIcon>
+
+            <AnimatedIcon client:load delay={0.25}>
+              <a
+                href="https://youtube.com/@dante5593?si=RPQFGiOYWQIO_-MR"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative w-16 h-16 sm:w-20 sm:h-20 backdrop-blur-xl bg-white/10 border-2 border-white/20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/20 hover:shadow-neon"
+              >
+                <svg
+                  class="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  ></path>
+                </svg>
+              </a>
+            </AnimatedIcon>
+
+            <AnimatedIcon client:load delay={0.3}>
+              <a
+                href="https://kick.com/captaindante"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative w-16 h-16 sm:w-20 sm:h-20 backdrop-blur-xl bg-white/10 border-2 border-white/20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-green-500 hover:bg-green-500/20 hover:shadow-neon"
+              >
+                <svg
+                  class="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16H8v-8h2v8zm8 0h-2l-4-4 4-4h2l-4 4 4 4z"
+                  ></path>
+                </svg>
+              </a>
+            </AnimatedIcon>
+          </div>
+        </SectionAnimation>
+
+        <!-- CTA Final - Super Impactante -->
+        <SectionAnimation client:load delay={0.4}>
+          <div
+            class="relative backdrop-blur-xl bg-white/10 border-2 border-white/20 rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl overflow-hidden group"
+          >
+            <!-- Animated Background -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-[#4f46e5] via-[#059669] to-[#10b981] opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+            >
+            </div>
+
+            <div class="relative z-10">
+              <AnimatedTitle client:load delay={0.1}>
+                <h3
+                  class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4"
+                >
+                  ¿Listo para transformar tus finanzas?
+                </h3>
+              </AnimatedTitle>
+              <AnimatedTitle client:load delay={0.2}>
+                <p
+                  class="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto"
+                >
+                  Agenda una consulta y descubre cómo puedo ayudarte a alcanzar
+                  tus objetivos financieros con estrategias personalizadas.
+                </p>
+              </AnimatedTitle>
+              <AnimatedTitle client:load delay={0.3}>
+                <a
+                  href="https://calendly.com/dantesoluciones/asesoria-personalizada-20-min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-[#06b6d4] via-[#059669] to-[#10b981] text-white rounded-2xl font-black text-base sm:text-lg md:text-xl transition-all duration-300 hover:scale-110 hover:shadow-neon-lg"
+                >
+                  Agenda tu consulta gratuita
+                  <svg
+                    class="w-5 h-5 sm:w-6 sm:h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                </a>
+              </AnimatedTitle>
+            </div>
+          </div>
+        </SectionAnimation>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a0f] border-t border-white/10 py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/40">
+        © {new Date().getFullYear()} Dante Soluciones. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
 </Layout>
 
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+</style>

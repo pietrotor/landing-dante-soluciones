@@ -8,11 +8,8 @@ export default function CourseModal() {
 
   useEffect(() => {
     setMounted(true);
-    // Mostrar el modal después de un pequeño delay al cargar la página
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 1000);
-    return () => clearTimeout(timer);
+    // Mostrar el modal inmediatamente al cargar la página
+    setIsOpen(true);
   }, []);
 
   useEffect(() => {
